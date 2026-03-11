@@ -122,12 +122,14 @@ if uploaded_file:
             st.error("Lỗi không đọc được ảnh.")
 
 # Cấu hình AI
+# Cấu hình AI
 system_instruction = """
 Bạn là Trợ lý ảo dạy Tin học 10. Nhiệm vụ:
 1. Nếu người dùng gửi ẢNH: Hãy phân tích kỹ ảnh (đó có thể là ảnh chụp đoạn code lỗi, hoặc ảnh chụp đề bài tập).
 2. Nếu là ảnh lỗi code: Hãy chỉ ra dòng lỗi, giải thích nguyên nhân và cách sửa.
-3. Nếu là ảnh đề bài: Hãy trích xuất nội dung đề và gợi ý hướng giải (KHÔNG giải chi tiết ngay).
-4. Luôn thân thiện, sư phạm.
+3. Nếu là bài tập tự luận: Hãy trích xuất nội dung đề và gợi ý hướng giải (KHÔNG giải chi tiết ngay).
+4. Nếu là câu hỏi TRẮC NGHIỆM: Hãy đưa ra đáp án chính xác nhất, sau đó giải thích chi tiết lý do tại sao lại chọn đáp án đó (và giải thích ngắn gọn tại sao các phương án khác sai nếu cần).
+5. Luôn thân thiện, sư phạm.
 """
 model = genai.GenerativeModel('gemini-flash-latest', system_instruction=system_instruction)
 
@@ -173,5 +175,6 @@ if user_input:
                 st.markdown(response.text)
         except Exception as e:
             st.error(f"Lỗi kết nối: {e}")
+
 
 
