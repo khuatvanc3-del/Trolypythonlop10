@@ -4,13 +4,12 @@ from pypdf import PdfReader
 from PIL import Image # Thư viện xử lý ảnh
 
 # --- 1. CẤU HÌNH TRANG WEB ---
-# --- KHU VỰC NỘI DUNG CHÍNH ---
-st.title("🐍 Trợ lý ảo Tin học 10")
-
-# 6. Khu vực hiển thị tin nhắn chào mừng (chat session)
-# Sử dụng st.chat_message("assistant") để hiện tin nhắn chào mừng
-with st.chat_message("assistant"):
-    st.write("Chào bạn! Mình là thầy/cô AI chuyên về Python 10. Hãy gửi ảnh hoặc code để mình giúp nhé! 👋")
+# --- 1. CẤU HÌNH TRANG WEB ---
+st.set_page_config(
+    page_title="Trợ lý Tin học 10 (Vision Edition)",
+    page_icon="👁️",
+    layout="wide"
+)
 
 # --- 2. KẾT NỐI AI ---
 try:
@@ -95,8 +94,12 @@ with st.sidebar:
         st.rerun()
 
 # --- 6. GIAO DIỆN CHÍNH ---
-st.title("🎓 Trợ lý ảo Tin học 10 (AI Vision)")
+st.title("🐍 Trợ lý ảo Tin học 10")
 
+# 6. Khu vực hiển thị tin nhắn chào mừng (chat session)
+# Sử dụng st.chat_message("assistant") để hiện tin nhắn chào mừng
+with st.chat_message("assistant"):
+    st.write("Chào bạn! Mình là thầy/cô AI chuyên về Python 10. Hãy gửi ảnh hoặc code để mình giúp nhé! 👋")
 # Hiển thị lý thuyết
 if selected_lesson != "--- Chọn bài học ôn tập ---":
     with st.expander(f"📖 Kiến thức: {selected_lesson}", expanded=True):
@@ -177,6 +180,7 @@ if user_input:
                 st.markdown(response.text)
         except Exception as e:
             st.error(f"Lỗi kết nối: {e}")
+
 
 
 
