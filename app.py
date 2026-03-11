@@ -131,7 +131,7 @@ Bạn là Trợ lý ảo dạy Tin học 10. Nhiệm vụ:
 4. Nếu là câu hỏi TRẮC NGHIỆM: Hãy đưa ra đáp án chính xác nhất, sau đó giải thích chi tiết lý do tại sao lại chọn đáp án đó (và giải thích ngắn gọn tại sao các phương án khác sai nếu cần).
 5. Luôn thân thiện, sư phạm.
 """
-model = genai.GenerativeModel('gemini-flash-latest', system_instruction=system_instruction)
+model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=system_instruction)
 
 # Khởi tạo chat
 if "chat_session" not in st.session_state or st.session_state.chat_session is None:
@@ -175,6 +175,7 @@ if user_input:
                 st.markdown(response.text)
         except Exception as e:
             st.error(f"Lỗi kết nối: {e}")
+
 
 
 
