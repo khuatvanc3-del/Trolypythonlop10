@@ -4,7 +4,6 @@ from pypdf import PdfReader
 from PIL import Image # Thư viện xử lý ảnh
 
 # --- 1. CẤU HÌNH TRANG WEB ---
-# --- 1. CẤU HÌNH TRANG WEB ---
 st.set_page_config(
     page_title="Trợ lý Tin học 10 (Vision Edition)",
     page_icon="👁️",
@@ -180,6 +179,7 @@ if user_input:
                 st.markdown(response.text)
         except Exception as e:
             st.error(f"Lỗi kết nối: {e}")
+
 
 
 
