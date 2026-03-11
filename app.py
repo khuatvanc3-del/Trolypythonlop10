@@ -99,7 +99,7 @@ st.title("🐍 Trợ lý ảo Tin học 10")
 # 6. Khu vực hiển thị tin nhắn chào mừng (chat session)
 # Sử dụng st.chat_message("assistant") để hiện tin nhắn chào mừng
 with st.chat_message("assistant"):
-    st.write("Chào bạn! Mình là thầy/cô AI chuyên về Python 10. Hãy gửi ảnh hoặc code để mình giúp nhé! 👋")
+    st.write("Chào bạn! Mình là thầy/cô AI chuyên về Python 10. Hãy gửi ảnh, file PDF hoặc code để mình giúp nhé! 👋")
 # Hiển thị lý thuyết
 if selected_lesson != "--- Chọn bài học ôn tập ---":
     with st.expander(f"📖 Kiến thức: {selected_lesson}", expanded=True):
@@ -180,6 +180,7 @@ if user_input:
                 st.markdown(response.text)
         except Exception as e:
             st.error(f"Lỗi kết nối: {e}")
+
 
 
 
