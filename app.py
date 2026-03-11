@@ -129,7 +129,7 @@ Bạn là Trợ lý ảo dạy Tin học 10. Nhiệm vụ:
 3. Nếu là ảnh đề bài: Hãy trích xuất nội dung đề và gợi ý hướng giải (KHÔNG giải chi tiết ngay).
 4. Luôn thân thiện, sư phạm.
 """
-model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_instruction)
+model = genai.GenerativeModel('gemini-1.5-flash-latest', system_instruction=system_instruction)
 
 # Khởi tạo chat
 if "chat_session" not in st.session_state or st.session_state.chat_session is None:
@@ -173,3 +173,4 @@ if user_input:
                 st.markdown(response.text)
         except Exception as e:
             st.error(f"Lỗi kết nối: {e}")
+
